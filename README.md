@@ -1,0 +1,2 @@
+# Parasit-words
+ For LSH 
