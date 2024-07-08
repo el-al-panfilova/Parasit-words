@@ -28,8 +28,20 @@ scrudriverVector = processor.audio2VectorProcessor('one_word_detect/audio/scrudr
 scrudriverVector  = np.squeeze(scrudriverVector .toarray())
 one_another_Vector = processor.audio2VectorProcessor('one_word_detect/audio/apple.mp3')
 one_another_Vector = np.squeeze(one_another_Vector.toarray())
+one_S_Vector = processor.audio2VectorProcessor('one_word_detect/audio/one_S.mp3')
+one_S_Vector = np.squeeze(one_S_Vector.toarray())
+one_E_Vector = processor.audio2VectorProcessor('one_word_detect/audio/one_E.mp3')
+one_E_Vector = np.squeeze(one_E_Vector.toarray())
+scrudriver_E_Vector = processor.audio2VectorProcessor('one_word_detect/audio/scrudriver_E.mp3')
+scrudriver_E_Vector = np.squeeze(scrudriver_E_Vector.toarray())
+scrudriver_S_Vector = processor.audio2VectorProcessor('one_word_detect/audio/scrudriver_S.mp3')
+scrudriver_S_Vector = np.squeeze(scrudriver_S_Vector.toarray())
 
-print(distance.cosine(oneVector,scrudriverVector))
-print(distance.cosine(oneVector,one_another_Vector))
+
+print("Сравнениие слов Один и Отвертка: ", distance.cosine(oneVector,scrudriverVector))
+print("Сравнение слов Один и испорченое Один: ",distance.cosine(oneVector,one_another_Vector))
+print("Сравнениие слов Один и Один, в исполнении Степана: ", distance.cosine(oneVector,one_S_Vector))
+print("Сравнениие слов Один и Один, в исполнении Ильи Евгеньевича: ", distance.cosine(oneVector,one_E_Vector))
+print("Сравнениие слов Отвертка, в исполнении Ильи Евгеньевича, и Отвертка, в исполнении Степана: ", distance.cosine(scrudriver_E_Vector,scrudriver_S_Vector))
 
 
