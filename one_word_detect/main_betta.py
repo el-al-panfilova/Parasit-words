@@ -17,13 +17,19 @@ import scipy.io.wavfile
 processor = Audio2Vec()
 
 oneVector = processor.audio2VectorProcessor('one_word_detect/audio/one.mp3')
+oneVector = np.squeeze(oneVector.toarray())
 buscetVector = processor.audio2VectorProcessor('one_word_detect/audio/buscet.mp3')
+buscetVector = np.squeeze(buscetVector.toarray())
 houseVector = processor.audio2VectorProcessor('one_word_detect/audio/house.mp3')
+houseVector = np.squeeze(houseVector.toarray())
 punVector = processor.audio2VectorProcessor('one_word_detect/audio/pan.mp3')
+punVector = np.squeeze(punVector.toarray())
 scrudriverVector = processor.audio2VectorProcessor('one_word_detect/audio/scrudriver.mp3')
+scrudriverVector  = np.squeeze(scrudriverVector .toarray())
 one_another_Vector = processor.audio2VectorProcessor('one_word_detect/audio/apple.mp3')
+one_another_Vector = np.squeeze(one_another_Vector.toarray())
 
-a = input()
-b = input()
+print(distance.cosine(oneVector,scrudriverVector))
+print(distance.cosine(oneVector,one_another_Vector))
 
 
