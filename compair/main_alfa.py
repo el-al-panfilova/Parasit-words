@@ -17,8 +17,9 @@ oneVector = np.squeeze(oneVector.toarray())
 
 
 cut = one_length
+delta = 0.01
 line = 0
-print(type(cut))
+
 
 while pa.info.length >= cut:
     second = song[line:cut]
@@ -32,6 +33,6 @@ while pa.info.length >= cut:
     print("Конец обрезания: ", cut)
     print('-------------------------------------------------')
 
-    line = line + one_length
-    cut = cut + one_length
+    line = line + delta
+    cut = cut + delta
 
